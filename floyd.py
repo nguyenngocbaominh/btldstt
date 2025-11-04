@@ -69,17 +69,16 @@ def read_csv():
 
         # Nếu ok thì convert sang float
         matran1 = raw.astype(float)
-        print(" Dữ liệu hợp lệ! Ma trận:")
+        print(" Ma trận vừa nhập:")
         print_matrix(matran1)
 
     except Exception as e:
-        print("⚠️ Định dạng file CSV không hợp lệ.")
+        print(" Định dạng file CSV không hợp lệ.")
         print("Chi tiết lỗi:", e)
 
 def print_matrix(mat):
     col_width = max(len(f"{val:.2f}") for row in mat for val in row) + 2
-    
-    print("\n Ma trận khoảng cách tối ưu:")
+   
     for row in mat:
         print("".join(f"{val:<{col_width}.2f}" for val in row))
 
